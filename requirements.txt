@@ -9,9 +9,11 @@ djangorestframework>=3.9.1
 
 
 # to serve static files in a production enviroment
+# http://whitenoise.evans.io/en/stable/django.html
 whitenoise
 
 # for deployment
+# https://docs.gunicorn.org/en/stable/install.html
 gunicorn
 
 # For serving static file from AWS s3
