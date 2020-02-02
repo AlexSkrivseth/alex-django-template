@@ -38,10 +38,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # api functionality
+    # 'rest_framework',
+    # 'rest_framework.authtoken',
+
+    # to get the templates looking nice
+    'bootstrap4',
+    'crispy_forms',
+
+    #custom
+    'main_app',
+    # 'api',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    # whtienoise to serve static files while debug mode is false
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,3 +134,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# this is where "collectstatic" will collect the staticfiles
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
+
+# api functionality
+# REST_FRAMEWORK = {
+#     # Use Django's standard `django.contrib.auth` permissions,
+#     # or allow read-only access for unauthenticated users.
+#
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         ### YOUR CODE HERE
+#         'rest_framework.authentication.BasicAuthentication',
+#         'rest_framework.authentication.TokenAuthentication',
+#         #'api.authentication.APIClientAuthentication',
+#         ),
+#
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#         )
+# }
