@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+import django_heroku
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -158,3 +158,8 @@ STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
 #         'rest_framework.permissions.IsAuthenticated',
 #         )
 # }
+
+
+# https://devcenter.heroku.com/articles/django-app-configuration
+# helps with connection to a db when deploying to heroku
+django_heroku.settings(locals())
