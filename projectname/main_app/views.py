@@ -3,4 +3,6 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Nothing Here Yet')
+
+
+    return render(request, 'main_app/base.html')
