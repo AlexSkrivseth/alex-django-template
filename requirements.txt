@@ -2,7 +2,7 @@
 # helpful setup advice
 # https://www.freecodecamp.org/news/improve-your-django-project-with-these-best-practices-47fd60a7bff3/
 
-django==2.2.9
+django==2.2.24
 
 # Restful Api anyone?
 djangorestframework>=3.9.1
